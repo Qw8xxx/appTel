@@ -1,0 +1,79 @@
+{
+  "categories": [
+    {
+      "id": "hauts",
+      "nom": "Hauts",
+      "emoji": "👕",
+      "produits": [
+        {
+          "id": "h1",
+          "nom": "T-Shirt Oversize",
+          "prix": 29.99,
+          "desc": "100% coton, coupe décontractée et moderne",
+          "tailles": ["XS", "S", "M", "L", "XL"],
+          "couleurs": ["Blanc", "Noir", "Beige"],
+          "stock": true
+        },
+        {
+          "id": "h2",
+          "nom": "Chemise Lin Naturel",
+          "prix": 49.99,
+          "desc": "Lin naturel, légère et élégante pour toutes saisons",
+          "tailles": ["S", "M", "L", "XL"],
+          "couleurs": ["Écru", "Bleu ciel", "Kaki"],
+          "stock": true
+        },
+        {
+          "id": "h3",
+          "nom": "Pull Coton Côtelé",
+          "prix": 59.99,
+          "desc": "Coton côtelé doux, coupe décontractée",
+          "tailles": ["XS", "S", "M", "L"],
+          "couleurs": ["Caramel", "Gris", "Blanc cassé"],
+          "stock": true
+        }
+      ]
+    },
+    {
+      "id": "bas",
+      "nom": "Bas",
+      "emoji": "👖",
+      "produits": [
+        {
+          "id": "b1",
+          "nom": "Jean Slim",
+          "prix": 69.99,
+          "desc": "Stretch taille haute, coupe moderne",
+          "tailles": ["36", "38", "40", "42", "44"],
+          "couleurs": ["Bleu", "Noir", "Gris"],
+          "stock": true
+        },
+        {
+          "id": "b2",
+          "nom": "Pantalon Wide-Leg",
+          "prix": 64.99,
+          "desc": "Large taille haute, tendance et confort",
+          "tailles": ["36", "38", "40", "42"],
+          "couleurs": ["Beige", "Noir", "Marron"],
+          "stock": true
+        }
+      ]
+    },
+    {
+      "id": "robes",
+      "nom": "Robes",
+      "emoji": "👗",
+      "produits": [
+        {
+          "id": "r1",
+          "nom": "Robe Midi Fleurie",
+          "prix": 79.99,
+          "desc": "Imprimé fleuri, légère et féminine",
+          "tailles": ["XS", "S", "M", "L", "XL"],
+          "couleurs": ["Rose", "Bleu"],
+          "stock": true
+        }
+      ]
+    }
+  ]
+}
