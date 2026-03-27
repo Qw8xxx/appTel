@@ -122,10 +122,12 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 10px;
-        width: 100%;
-        border: solid 1px;
-        border-radius: 10px;
+        padding: 10px 12px;
+        flex: 1;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
       }
 
       .home-h1 {
@@ -399,38 +401,20 @@
             </div>
           </div>
           <div class="divCatContain">
-            <div class="divCat">
-              <p>Catégories</p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-chevron-down"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
-                />
-              </svg>
-            </div>
-            <div class="divCat">
-              <p>Farms</p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-chevron-down"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
-                />
-              </svg>
-            </div>
+            <select
+              id="catFilterSelect"
+              class="divCat"
+              onchange="filterCards()"
+            >
+              <option value="">Catégories</option>
+            </select>
+            <select
+              id="farmFilterSelect"
+              class="divCat"
+              onchange="filterCards()"
+            >
+              <option value="">Farms</option>
+            </select>
           </div>
           <div class="cat-grid" id="catGrid"></div>
         </div>
@@ -520,6 +504,8 @@
           d.className = "cat-card";
           d.setAttribute("role", "button");
           d.setAttribute("tabindex", "0");
+          d.setAttribute("data-categorie", cat.categorie);
+          d.setAttribute("data-farm", cat.farm);
           d.innerHTML =
             `<div class="cat-img-wrap">
               <img class="cat-img" src="${cat.image}">
@@ -567,6 +553,48 @@
         const totalProducts = CATALOG.categories.length;
         const nbSpan = document.querySelector(".nbProduit span");
         if (nbSpan) nbSpan.textContent = totalProducts;
+
+        populateFilters();
+      }
+
+      function populateFilters() {
+        const categories = [
+          ...new Set(CATALOG.categories.map((c) => c.categorie)),
+        ];
+        const farms = [...new Set(CATALOG.categories.map((c) => c.farm))];
+
+        const catSelect = document.getElementById("catFilterSelect");
+        const farmSelect = document.getElementById("farmFilterSelect");
+
+        categories.forEach((cat) => {
+          const option = document.createElement("option");
+          option.value = cat;
+          option.textContent = cat;
+          catSelect.appendChild(option);
+        });
+
+        farms.forEach((farm) => {
+          const option = document.createElement("option");
+          option.value = farm;
+          option.textContent = farm;
+          farmSelect.appendChild(option);
+        });
+      }
+
+      function filterCards() {
+        const selectedCat = document.getElementById("catFilterSelect").value;
+        const selectedFarm = document.getElementById("farmFilterSelect").value;
+        const cards = document.querySelectorAll(".cat-card");
+
+        cards.forEach((card) => {
+          const cardCat = card.getAttribute("data-categorie");
+          const cardFarm = card.getAttribute("data-farm");
+
+          const showCat = !selectedCat || cardCat === selectedCat;
+          const showFarm = !selectedFarm || cardFarm === selectedFarm;
+
+          card.style.display = showCat && showFarm ? "flex" : "none";
+        });
       }
 
       function goHome() {
