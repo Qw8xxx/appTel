@@ -99,7 +99,7 @@
         justify-content: space-between;
       }
 
-      .nbProduit{
+      .nbProduit {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -107,17 +107,17 @@
         font-weight: 500;
         padding: 2px 7px;
         border-radius: 20px;
-        border: solid 1px ;
+        border: solid 1px;
       }
 
-      .divCatContain{
+      .divCatContain {
         display: flex;
         flex-direction: row;
-        width: 100%;
         gap: 5%;
+        padding: 0 10px;
       }
 
-      .divCat{
+      .divCat {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -142,32 +142,69 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
+        padding: 10px;
       }
 
       .cat-card {
         background: var(--surface);
         border: 1px solid var(--border);
-        padding: 16px;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
         cursor: pointer;
-        text-align: center;
         transition: background 0.15s;
       }
-      .cat-card:active {
-        background: #eee;
+
+      .cat-img-wrap {
+        width: 100%;
+        height: 70%;
+        overflow: hidden;
+        flex-shrink: 0;
+        position: relative;
       }
 
-      .cat-ico {
-        font-size: 28px;
-        margin-bottom: 8px;
+      .cat-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 10px 10px 0 0;
       }
+
+      .cat-cat {
+        position: absolute;
+        bottom: 6px;
+        left: 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 8px;
+        font-size: 10px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border-radius: 10px;
+        backdrop-filter: blur(4px);
+      }
+
       .cat-name {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
+        padding: 6px 8px;
+        flex-shrink: 0;
+        line-height: 1.2;
       }
-      .cat-nb {
+
+      .cat-farm {
         font-size: 12px;
-        color: var(--text-sub);
-        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0 8px 6px 8px;
+        color: #555;
+        flex-shrink: 0;
       }
 
       .nav {
@@ -364,14 +401,34 @@
           <div class="divCatContain">
             <div class="divCat">
               <p>Catégories</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-down"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                />
               </svg>
             </div>
             <div class="divCat">
               <p>Farms</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-down"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                />
               </svg>
             </div>
           </div>
@@ -464,17 +521,50 @@
           d.setAttribute("role", "button");
           d.setAttribute("tabindex", "0");
           d.innerHTML =
-            `<span class="cat-ico">${escHtml(cat.emoji)}</span>` +
+            `<div class="cat-img-wrap">
+              <img class="cat-img" src="${cat.image}">
+              <p class="cat-cat">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="opacity:0.7;">
+                    <path d="M20 13l-7 7-10-10V3h7z"/>
+                    <circle cx="7" cy="7" r="1.5"/>
+                </svg>
+                ${cat.categorie}
+              </p>
+            </div>` +
             `<div class="cat-name">${escHtml(cat.nom)}</div>` +
-            `<div class="cat-nb">${cat.produits.length} articles</div>`;
+            `<span class="cat-farm">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   width="20"
+                   height="20"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.6"
+                   stroke-linecap="round"
+                   stroke-linejoin="round"
+                   style="opacity:0.7;">
+
+                <path d="M3 10L12 4l9 6"/>
+                <path d="M5 10v9h14v-9"/>
+                <path d="M10 19v-5h4v5"/>
+
+              </svg>
+              ${cat.farm}
+            </span>`;
           d.onclick = () => console.log("Catégorie: " + cat.id);
           g.appendChild(d);
         });
 
-        const totalProducts = CATALOG.categories.reduce(
-          (sum, cat) => sum + cat.produits.length,
-          0,
-        );
+        const totalProducts = CATALOG.categories.length;
         const nbSpan = document.querySelector(".nbProduit span");
         if (nbSpan) nbSpan.textContent = totalProducts;
       }

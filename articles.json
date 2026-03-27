@@ -2,78 +2,143 @@
   "categories": [
     {
       "id": "hauts",
-      "nom": "Hauts",
-      "emoji": "👕",
-      "produits": [
-        {
-          "id": "h1",
-          "nom": "T-Shirt Oversize",
-          "prix": 29.99,
-          "desc": "100% coton, coupe décontractée et moderne",
-          "tailles": ["XS", "S", "M", "L", "XL"],
-          "couleurs": ["Blanc", "Noir", "Beige"],
-          "stock": true
-        },
-        {
-          "id": "h2",
-          "nom": "Chemise Lin Naturel",
-          "prix": 49.99,
-          "desc": "Lin naturel, légère et élégante pour toutes saisons",
-          "tailles": ["S", "M", "L", "XL"],
-          "couleurs": ["Écru", "Bleu ciel", "Kaki"],
-          "stock": true
-        },
-        {
-          "id": "h3",
-          "nom": "Pull Coton Côtelé",
-          "prix": 59.99,
-          "desc": "Coton côtelé doux, coupe décontractée",
-          "tailles": ["XS", "S", "M", "L"],
-          "couleurs": ["Caramel", "Gris", "Blanc cassé"],
-          "stock": true
-        }
-      ]
+      "nom": "Hautezezs",
+      "image": "./images/test.jpg",
+      "farm": "jsp",
+      "categorie": "Hauts"
     },
     {
       "id": "bas",
-      "nom": "Bas",
-      "emoji": "👖",
-      "produits": [
-        {
-          "id": "b1",
-          "nom": "Jean Slim",
-          "prix": 69.99,
-          "desc": "Stretch taille haute, coupe moderne",
-          "tailles": ["36", "38", "40", "42", "44"],
-          "couleurs": ["Bleu", "Noir", "Gris"],
-          "stock": true
-        },
-        {
-          "id": "b2",
-          "nom": "Pantalon Wide-Leg",
-          "prix": 64.99,
-          "desc": "Large taille haute, tendance et confort",
-          "tailles": ["36", "38", "40", "42"],
-          "couleurs": ["Beige", "Noir", "Marron"],
-          "stock": true
-        }
-      ]
+      "nom": "sdskdsj",
+      "image": "./images/test2.jpg",
+      "farm": "maison test",
+      "categorie": "bas"
     },
     {
       "id": "robes",
-      "nom": "Robes",
-      "emoji": "👗",
-      "produits": [
-        {
-          "id": "r1",
-          "nom": "Robe Midi Fleurie",
-          "prix": 79.99,
-          "desc": "Imprimé fleuri, légère et féminine",
-          "tailles": ["XS", "S", "M", "L", "XL"],
-          "couleurs": ["Rose", "Bleu"],
-          "stock": true
-        }
-      ]
+      "nom": "sdiuqdhofehuijosqxqsdqd",
+      "image": "./images/test3.jpg",
+      "farm": "maison",
+      "categorie": "robes"
+    },
+    {
+      "id": "chaussures",
+      "nom": "StepUp",
+      "image": "./images/test4.jpg",
+      "farm": "atelier 1",
+      "categorie": "chaussures"
+    },
+    {
+      "id": "accessoires",
+      "nom": "GlamAcc",
+      "image": "./images/test5.jpg",
+      "farm": "atelier 2",
+      "categorie": "accessoires"
+    },
+    {
+      "id": "veste",
+      "nom": "WarmWear",
+      "image": "./images/test6.jpg",
+      "farm": "atelier 3",
+      "categorie": "vestes"
+    },
+    {
+      "id": "jeans",
+      "nom": "BlueDenim",
+      "image": "./images/test7.jpg",
+      "farm": "atelier 4",
+      "categorie": "jeans"
+    },
+    {
+      "id": "pulls",
+      "nom": "CozyKnit",
+      "image": "./images/test8.jpg",
+      "farm": "atelier 5",
+      "categorie": "pulls"
+    },
+    {
+      "id": "t-shirts",
+      "nom": "CasualTee",
+      "image": "./images/test9.jpg",
+      "farm": "atelier 6",
+      "categorie": "t-shirts"
+    },
+    {
+      "id": "shorts",
+      "nom": "SummerShorts",
+      "image": "./images/test10.jpg",
+      "farm": "atelier 7",
+      "categorie": "shorts"
+    },
+    {
+      "id": "jupes",
+      "nom": "LovelySkirts",
+      "image": "./images/test11.jpg",
+      "farm": "atelier 8",
+      "categorie": "jupes"
+    },
+    {
+      "id": "maillots",
+      "nom": "BeachWear",
+      "image": "./images/test12.jpg",
+      "farm": "atelier 9",
+      "categorie": "maillots"
+    },
+    {
+      "id": "manteaux",
+      "nom": "WinterCoats",
+      "image": "./images/test13.jpg",
+      "farm": "atelier 10",
+      "categorie": "manteaux"
+    },
+    {
+      "id": "chaussures_sport",
+      "nom": "SportyFeet",
+      "image": "./images/test14.jpg",
+      "farm": "atelier 11",
+      "categorie": "chaussures sport"
+    },
+    {
+      "id": "sacs",
+      "nom": "BagIt",
+      "image": "./images/test15.jpg",
+      "farm": "atelier 12",
+      "categorie": "sacs"
+    },
+    {
+      "id": "bijoux",
+      "nom": "ShinyJewels",
+      "image": "./images/test16.jpg",
+      "farm": "atelier 13",
+      "categorie": "bijoux"
+    },
+    {
+      "id": "lunettes",
+      "nom": "SunnyEyes",
+      "image": "./images/test17.jpg",
+      "farm": "atelier 14",
+      "categorie": "lunettes"
+    },
+    {
+      "id": "chapeaux",
+      "nom": "HatWorld",
+      "image": "./images/test18.jpg",
+      "farm": "atelier 15",
+      "categorie": "chapeaux"
+    },
+    {
+      "id": "pyjamas",
+      "nom": "DreamWear",
+      "image": "./images/test19.jpg",
+      "farm": "atelier 16",
+      "categorie": "pyjamas"
+    },
+    {
+      "id": "sweats",
+      "nom": "ComfyHoodies",
+      "image": "./images/test20.jpg",
+      "farm": "atelier 17",
+      "categorie": "sweats"
     }
   ]
 }
